@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const projectsRouter = require('./routes/projects.js');
 const actionsRouter = require('./routes/actions.js');
@@ -6,6 +7,8 @@ const actionsRouter = require('./routes/actions.js');
 const server = express();
 
 server.use(express.json());
+
+server.use(cors());
 
 server.use('/projects', projectsRouter);
 server.use('/actions', actionsRouter);
